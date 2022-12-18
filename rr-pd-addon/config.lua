@@ -1,5 +1,7 @@
 Config = Config or {}
 
+Config.jobname = "police",
+
 Config.LiveryCommand = "livery"
 
 Config.ExtraCommand = "extras"
