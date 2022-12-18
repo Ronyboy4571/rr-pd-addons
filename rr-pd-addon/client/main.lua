@@ -52,8 +52,3 @@ RegisterCommand(Config.TintCommand, function(source, args)
      QBCore.Functions.Notify(Config.Alerts['error_job'], "error", 3000) 
     end
 end, false)
-
-
-
-
-
