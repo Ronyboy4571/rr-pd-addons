@@ -6,7 +6,7 @@ RegisterCommand(Config.LiveryCommand, function(source, args)
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
     local liveryID = tonumber(args[1])
-    if PlayerData.job.name == "police" and PlayerData.job.onduty then
+    if PlayerData.job.name == Config.jobname and PlayerData.job.onduty then
         SetVehicleLivery(veh, liveryID)
         QBCore.Functions.Notify(Config.Alerts['sucess_livery'], "success", 2000)
     else
@@ -20,7 +20,7 @@ RegisterCommand(Config.ExtraCommand, function(source, args)
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1))
     local extraId = tonumber(args[1])
     local isExtraActive = IsVehicleExtraTurnedOn(vehicle, extraId)
-    if PlayerData.job.name == "police" and PlayerData.job.onduty then
+    if PlayerData.job.name == Config.jobname and PlayerData.job.onduty then
         SetVehicleExtra(vehicle, extraId, isExtraActive)
         QBCore.Functions.Notify(Config.Alerts['sucess_extra'], "success", 2000)
     else
@@ -32,7 +32,7 @@ RegisterCommand(Config.CleanCommand, function(source, args)
     local PlayerData = QBCore.Functions.GetPlayerData()
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
-    if PlayerData.job.name == "police" and PlayerData.job.onduty then
+    if PlayerData.job.name == Config.jobname and PlayerData.job.onduty then
         SetVehicleDirtLevel(vehicle, 0)
         QBCore.Functions.Notify(Config.Alerts['sucess_clean'], "success", 2000)
     else
@@ -45,7 +45,7 @@ RegisterCommand(Config.TintCommand, function(source, args)
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
     local TintID = tonumber(args[1])
-    if PlayerData.job.name == "police" and PlayerData.job.onduty then
+    if PlayerData.job.name == Config.jobname and PlayerData.job.onduty then
         SetVehicleWindowTint(vehicle, TintID)
         QBCore.Functions.Notify(Config.Alerts['sucess_tint'], "success", 2000)
     else
