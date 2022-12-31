@@ -1,6 +1,12 @@
 Config = Config or {}
 
-Config.jobname = "police"
+Config.jobname = { 
+    "police",
+     "bcso",
+     "fib",
+    "iffa"
+    
+}
 
 Config.LiveryCommand = "livery"
 
